@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Home</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height:100vh;
+      font-family: Arial, sans-serif;
+      background-image: url('f.jpg');
+      background-size:cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000; /* Make sure it's above other content */
+    }
+    footer {
+      background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+      padding: 50px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      z-index: 1000; /* Make sure it's above other content */
+    }
+    h1 {
+      background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 36px;
+      color: #fff;
+      font-family: 'Arial Black', sans-serif; /* Example of stylish font */
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      animation: floatHeader 3s infinite ease-in-out;
+    }
+    @keyframes floatHeader {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    .container{
+      padding-top:150px;
+    }
+    .card {
+      border: none;
+      
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    .dropdown {
+      display: inline-block;
+      margin-right: 10px; /* Adjust space between buttons */
+    }
+    .dropbtn, .btn {
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    .dropbtn {
+      background-color: #4CAF50;
+    }
+    .dropbtn:hover, .btn:hover {
+      background-color: #45a049; /* Darker background on hover */
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+<header>
+  <h1>Sport Scheduler</h1>
+</header>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Admin Home</h5>
+            <div class="dropdown">
+              <button class="dropbtn">All Events</button>
+              <div class="dropdown-content">
+                <a href="#">Cricket</a>
+                <a href="#">Football</a>
+                <a href="#">Basketball</a>
+              </div>
+            </div>
+            <a href="createevent.html" class="btn btn-success">Create Event</a>
+            <div class="dropdown">
+              <button class="dropbtn">Remove Event</button>
+              <div class="dropdown-content">
+                <a href="#">Cricket</a>
+                <a href="#">Football</a>
+                <a href="#">Basketball</a>
+              </div>
+            </div>
+            <button type="button" class="btn btn-danger" id="logoutBtn">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Logout button click handler
+    document.getElementById('logoutBtn').addEventListener('click', function() {
+      var logoutConfirmed = confirm('Are you sure you want to logout?');
+      if (logoutConfirmed) {
+        // Redirect to sam.html upon logout confirmation
+        window.location.href = 'sam.html';
+      }
+    });
+  </script>
+</body>
+</html>
