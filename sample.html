@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sport Scheduler</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height:100vh;
+    font-family: Arial, sans-serif;
+    background-image: url('f.jpg');
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  header {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Make sure it's above other content */
+  }
+  footer {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+    padding: 50px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1000; /* Make sure it's above other content */
+  }
+  h1 {
+    font-size: 36px;
+    color: #fff;
+    font-family: 'Arial Black', sans-serif; /* Example of stylish font */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    animation: floatHeader 3s infinite ease-in-out;
+  }
+  @keyframes floatHeader {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Sport Scheduler</h1>
+</header>
+
+<footer>
+  <!-- Footer content goes here -->
+</footer>
+
+<!-- Your other content goes here -->
+
+</body>
+</html>
