@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Sign In</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height:100vh;
+      font-family: Arial, sans-serif;
+      background-image: url('f.jpg');
+      background-size:cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000; /* Make sure it's above other content */
+    }
+    footer {
+      background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+      padding: 50px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      z-index: 1000; /* Make sure it's above other content */
+    }
+    h1 {
+      font-size: 36px;
+  font-family: 'Arial Black', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  animation: floatHeader 3s infinite ease-in-out;
+  background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    }
+    @keyframes floatHeader {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    .container {
+      margin-top: 100px;
+    }
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<header>
+  <h1>Sport Scheduler</h1>
+</header>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Admin Sign In</h5>
+            <form id="adminLoginForm" action="save_admin.php" method="POST"> <!-- Change action to PHP file -->
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Sign In</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and jQuery (for form submission handling) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Handle form submission
+    $('#adminLoginForm').submit(function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Simulate successful login
+      alert('Admin Login successful! Redirecting to admin home page...');
+
+      // Redirect to admin home page
+      window.location.href = 'adminhome.html';
+    });
+  </script>
+</body>
+</html>
