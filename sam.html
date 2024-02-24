@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height:100vh;
+      font-family: 'Arial', sans-serif;
+      background-image: url('ball.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    header {
+      background-color: hwb(109 69% 17% / 0.444);
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 50px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      z-index: 1000;
+    }
+
+    h1 {
+      background: linear-gradient(to right,  #040448, #1c032e, #2c093b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 36px;
+      color: #fff;
+      font-family: 'Arial Black', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      animation: floatHeader 3s infinite ease-in-out;
+    }
+
+    @keyframes floatHeader {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    .container {
+      margin-top: 200px; /* Increased margin top for container */
+      width: 80%;
+      margin: auto;
+    }
+    
+    .card-column {
+      margin-top: 150px; /* Increased margin top for card columns */
+    }
+
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn {
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background-color: #22d4bc;
+    }
+
+    /* Added style for small screens to stack the cards vertically */
+    @media (max-width: 576px) {
+      .card-column {
+        margin-top: 0;
+      }
+    }
+  </style>
+</head>
+<header>
+  <h1>Sport Scheduler</h1>
+</header>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 card-column">
+        <div class="card text-center py-4">
+          <div class="card-body">
+            <h5 class="card-title">Users Login</h5>
+            <p class="card-text">Login as a regular user.</p>
+            <a href="signinu.html" class="btn btn-primary">Sign In</a>
+            <a href="signupu.html" class="btn btn-secondary">Sign Up</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 card-column">
+        <div class="card text-center py-4">
+          <div class="card-body">
+            <h5 class="card-title">Admin Login</h5>
+            <p class="card-text">Login as an administrator.</p>
+            <a href="signina.html" class="btn btn-primary">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
