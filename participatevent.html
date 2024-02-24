@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Event</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Datepicker CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height:100vh;
+      font-family: Arial, sans-serif;
+      background-image: url('f.jpg');
+      background-size:cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000; /* Make sure it's above other content */
+    }
+    footer {
+      background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+      padding: 50px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      z-index: 1000; /* Make sure it's above other content */
+    }
+    h1 {
+      font-size: 36px;
+  font-family: 'Arial Black', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  animation: floatHeader 3s infinite ease-in-out;
+  background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    }
+    @keyframes floatHeader {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .custom-file-label::after {
+      content: "Choose Image";
+    }
+  </style>
+</head>
+<header>
+  <h1>Sport Scheduler</h1>
+</header>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Join Event</h5>
+            <form id="createEventForm">
+              <div class="form-group">
+                <label for="eventImage">Event Image</label>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="eventImage" name="eventImage">
+                  <label class="custom-file-label" for="eventImage">Choose file</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="eventName">Event Name</label>
+                <input type="text" class="form-control" id="eventName" name="eventName" required>
+              </div>
+              <div class="form-group">
+                <label for="eventDescription">Description</label>
+                <textarea class="form-control" id="eventDescription" name="eventDescription" rows="5" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="startDate">Select Date</label>
+
+                <input type="date" class="form-control" id="startDate" name="startDate" required>
+              </div>
+              <div class="form-group">
+                <label for="area">Select the Statidium</label>
+                <input type="text" class="form-control" id="area" name="startDate" required>
+                
+                <div class="invalid-feedback" id="dateError">End date should be after start date.</div>
+              </div>
+              <button type="submit" class="btn btn-primary">Join Event</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Datepicker JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+  <script>
+    // Initialize datepicker
+    $('#startDate').datepicker({
+      format: 'yyyy-mm-dd',
+      autoclose: true,
+      todayHighlight: true
+    });
+    $('#endDate').datepicker({
+      format: 'yyyy-mm-dd',
+      autoclose: true,
+      todayHighlight: true
+    });
+
+    // Handle form submission
+    $('#createEventForm').submit(function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Retrieve start and end dates
+      var startDate = new Date($('#startDate').val());
+      var endDate = new Date($('#endDate').val());
+
+      // Check if end date is after start date
+      if (endDate <= startDate) {
+        $('#dateError').text('End date should be after start date.');
+        $('#endDate').addClass('is-invalid');
+        return false;
+      } else {
+        $('#endDate').removeClass('is-invalid');
+      }
+
+      // Simulate successful event creation
+      alert('Event Joined successfully! Redirecting to user home page...');
+
+      // Redirect to admin home page
+      window.location.href = 'userhome.html';
+    });
+  </script>
+</body>
+</html>
